@@ -15,7 +15,6 @@ import os, environ
 from decouple import config
 
 env = environ.Env(
-    # set casting, default value
     DEBUG=(bool, False)
 )
 
@@ -51,7 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework.authtoken',
+    'aspectapp',
+    'comparisonapp',
 ]
 
 MIDDLEWARE = [

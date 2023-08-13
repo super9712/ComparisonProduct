@@ -1,12 +1,12 @@
 # aspectapp/views.py
 
+import openai
+from decouple import config
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-import openai
-from decouple import config
 
-class CompareProductsView(APIView):
+class AspectProductsView(APIView):
     def get(self, request):
         products = request.query_params.getlist("product")
 
@@ -19,17 +19,15 @@ class CompareProductsView(APIView):
     def generate_comparison_questions(self, product1, product2):
         openai.api_key = config('OPENAI_API_KEY')
 
-        aspects = ["quality", "price", "design", "performance", "reviews", "features"]
-        questions = []
+        prompt = f"{product1}과 {product2}의 비교기준을 6가지로 나타내세요."
+        response = openai.Completion.create(
+            engine="text-davinci-003",
+            prompt=prompt,
+            max_tokens=500
+        )
+        aspect_list = response.choices[0].text.strip()
+        aspect_names = aspect_list.split(', ')
 
-        for aspect in aspects:
-            prompt = f"{aspect}측면에서 {product1}과 {product2} 중 어느 제품이 더 좋은 제품인가요?"
-            response = openai.Completion.create(
-                engine="text-davinci-003",
-                prompt=prompt,
-                max_tokens=500
-            )
-            answer = response.choices[0].text.strip()
-            questions.append(answer)
+        numbered_aspects = [f"{idx + 1}. {aspect}" for idx, aspect in enumerate(aspect_names)]
 
-        return questions
+        return numbered_aspects
