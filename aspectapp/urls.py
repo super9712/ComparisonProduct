@@ -1,9 +1,8 @@
 # aspectapp/urls.py
 
 from django.urls import path
-from .views import AspectProductsView
+from .views import CompareProductsView
 
 urlpatterns = [
-    path('aspect/', AspectProductsView.as_view(), name='compare-products'),
-    # 다른 URL 패턴들을 여기에 추가할 수 있습니다.
+    path('compare/', CompareProductsView.as_view(), name='compare-products'),
 ]

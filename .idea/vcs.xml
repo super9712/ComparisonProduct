@@ -3,8 +3,5 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ComparisonProduct" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ProductCompare-Backend" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ProductCompare-Backend/ProductCompare-Backend" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ProductCompare-Backend/ProductCompare-Backend/ProductCompare-Backend" vcs="Git" />
   </component>
 </project>
