@@ -5,6 +5,7 @@
 
 ## 2. 기술 스택
 FE : React.js
+
 BE : Django Rest Framework
 
 ## 3. 코드 샘플
