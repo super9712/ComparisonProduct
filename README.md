@@ -29,5 +29,6 @@ get 방식을 이용해 클라이언트에게 보냄
 <배운 점>
 
 get과 post에 대한 이해도 향상
-api개념
+
+Chat gpt Open Ai를 활용한 Api 제작
 
