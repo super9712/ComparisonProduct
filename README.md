@@ -1,8 +1,11 @@
-# 챗GPT를 이용한 상품 비교 및 추천 서비스 API 개발 '상추'
+# '상추'
 
 ## 1. 소개
+챗GPT를 이용한 상품 비교 및 추천 서비스
 
 ## 2. 기술 스택
+FE : React.js
+BE : Django Rest Framework
 
 ## 3. 코드 샘플
 <aspectapp>
